@@ -1,0 +1,10 @@
+*.sav
+*.SAV
+data/
+*.zip
+
+# Jupyter
+.ipynb_checkpoints/
+
+*.xlsx
+*.xls
