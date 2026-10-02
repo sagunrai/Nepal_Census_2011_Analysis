@@ -29,13 +29,13 @@
 - [Project structure](#-project-structure)
 - [How to run](#-how-to-run)
 - [Limitations](#-limitations)
-- [Authors](#-authors)
+- [Data source](#-data-source)
 
 ---
 
 ## 📌 About
 
-This project analyses the **2011 Nepal Population and Housing Census**, published by the Central Bureau of Statistics (CBS) Nepal. It was done for **Data Mining (AICC 301)** at the Department of Artificial Intelligence, Kathmandu University.
+This project analyses the **2011 Nepal Population and Housing Census**, published by the Central Bureau of Statistics (CBS) Nepal.
 
 The goal is to turn raw census files into insights that can support planning and policy, using exploratory data analysis (EDA), visualisation and simple classification models.
 
@@ -67,7 +67,7 @@ The goal is to turn raw census files into insights that can support planning and
 
 ## 🔍 Explore the results
 
-> Click a section to expand it. Each section matches one dataset.
+> Click a section to expand it. Each section matches one dataset. All charts are in the [full report](Nepal_Census_2011_Project_Report.pdf).
 
 <details>
 <summary><b>🗺️ 1. BatchId: administrative geography</b></summary>
@@ -78,24 +78,6 @@ Maps every VDC/municipality to its district, development region, ecological belt
 
 - Nepal has **75 districts**: 39 in the Hill belt, 20 in the Terai and 16 in the Mountain belt.
 - Rural areas dominate. Kathmandu district has far more rural VDCs than urban ones.
-
-<p align="center">
-  <img src="images/batch_districts_per_ecological_belt.png" width="48%" alt="Districts per ecological belt">
-  <img src="images/batch_nepal_urban_rural.png" width="48%" alt="Urban vs rural VDCs in Nepal">
-</p>
-
-<details>
-<summary>More charts</summary>
-
-<p align="center">
-  <img src="images/batch_vdcs_per_district.png" width="90%" alt="VDCs per district"><br>
-  <img src="images/batch_urban_rural_per_district.png" width="90%" alt="Urban and rural per district"><br>
-  <img src="images/batch_kathmandu_urban_rural.png" width="60%" alt="Kathmandu urban vs rural"><br>
-  <img src="images/batch_districts_per_eco_dev_region.png" width="80%" alt="Districts per eco-development region"><br>
-  <img src="images/batch_urban_rural_per_eco_dev_region.png" width="90%" alt="Urban and rural per eco-development region">
-</p>
-
-</details>
 
 </details>
 
@@ -110,31 +92,6 @@ Household members who were away from home at the time of the census, mostly abro
 - **Private service or job** is the leading reason by a wide margin.
 - The **Middle East** and **India** are the top destinations.
 - Business-related absences last longest on average, and most absences are under five years.
-
-<p align="center">
-  <img src="images/absentee_age_groups.png" width="48%" alt="Absentees by age group">
-  <img src="images/absentee_by_destination.png" width="48%" alt="Absentees by destination">
-</p>
-<p align="center">
-  <img src="images/absentee_by_reason.png" width="48%" alt="Absentees by reason">
-  <img src="images/absentee_by_sex.png" width="48%" alt="Absentees by sex">
-</p>
-
-<details>
-<summary>More charts</summary>
-
-<p align="center">
-  <img src="images/absentee_by_district.png" width="90%" alt="Absentees by district"><br>
-  <img src="images/absentee_age_distribution.png" width="70%" alt="Age distribution of absentees"><br>
-  <img src="images/absentee_by_education.png" width="90%" alt="Absentees by education level"><br>
-  <img src="images/absentee_duration_distribution.png" width="70%" alt="Duration of absence"><br>
-  <img src="images/absentee_district_reason.png" width="90%" alt="Absentees by district and reason"><br>
-  <img src="images/absentee_avg_duration_by_district.png" width="90%" alt="Average duration by district"><br>
-  <img src="images/absentee_avg_duration_by_reason.png" width="70%" alt="Average duration by reason"><br>
-  <img src="images/absentee_reason_by_destination.png" width="80%" alt="Reason of absence by destination">
-</p>
-
-</details>
 
 </details>
 
@@ -151,28 +108,6 @@ Housing type, building materials, utilities, house ownership and female land own
 - **Firewood** is the main cooking fuel, ahead of LP gas. **Electricity** is the main lighting source.
 - Most households have **no female land owner**.
 
-<p align="center">
-  <img src="images/household_ownership_types.png" width="48%" alt="House ownership types">
-  <img src="images/household_female_ownership.png" width="48%" alt="Households by female ownership">
-</p>
-<p align="center">
-  <img src="images/household_cooking_fuel.png" width="48%" alt="Cooking fuel">
-  <img src="images/household_lighting.png" width="48%" alt="Source of lighting">
-</p>
-
-<details>
-<summary>More charts</summary>
-
-<p align="center">
-  <img src="images/household_per_district.png" width="90%" alt="Households per district"><br>
-  <img src="images/household_roof_wall.png" width="90%" alt="Roof and wall type"><br>
-  <img src="images/household_drinking_water.png" width="80%" alt="Source of drinking water"><br>
-  <img src="images/household_ownership_by_district.png" width="90%" alt="Ownership type by district"><br>
-  <img src="images/household_female_owned_by_district.png" width="90%" alt="Female-owned households by district">
-</p>
-
-</details>
-
 </details>
 
 <details>
@@ -188,22 +123,6 @@ Person-level records linked to households.
 - **Own-account workers** are the largest employment-status group, followed by employees.
 - The vast majority of individuals are recorded as not disabled.
 
-<p align="center">
-  <img src="images/individual_religion.png" width="48%" alt="Religion">
-  <img src="images/individual_employment_status.png" width="48%" alt="Employment status">
-</p>
-
-<details>
-<summary>More charts</summary>
-
-<p align="center">
-  <img src="images/individual_education_level.png" width="90%" alt="Level of education"><br>
-  <img src="images/individual_occupation.png" width="90%" alt="Occupation distribution"><br>
-  <img src="images/individual_disability.png" width="80%" alt="Type of disability">
-</p>
-
-</details>
-
 </details>
 
 <details>
@@ -217,22 +136,6 @@ Deaths recorded in the 12 months before the census.
 - Deaths rise sharply with age: **60+** is the largest group, then adults aged 15 to 59, then children.
 - About **55.9% male**, **43.0% female** and 1.1% not stated.
 - The district mortality rate per 100 households is highest in districts such as **Kalikot** and **Terhathum**.
-
-<p align="center">
-  <img src="images/death_by_age_group.png" width="48%" alt="Deaths by age group">
-  <img src="images/death_gender_pie.png" width="48%" alt="Gender of deceased persons">
-</p>
-
-<details>
-<summary>More charts</summary>
-
-<p align="center">
-  <img src="images/death_by_district.png" width="90%" alt="Deaths by district"><br>
-  <img src="images/death_age_group_per_district.png" width="70%" alt="Deaths by age group per district"><br>
-  <img src="images/death_mortality_rate.png" width="90%" alt="District-wise mortality rate per 100 households">
-</p>
-
-</details>
 
 </details>
 
@@ -250,16 +153,6 @@ Two classifiers were trained. Accuracy and recall below are calculated from the 
 | Predict **house ownership** (Decision Tree) | 86.6% | 84.3% (always "Own") | Own: 96% recall | Rented: 40% recall. Institutional and Others are rarely identified |
 
 **What this means:** both models beat the baseline only slightly. The data is heavily imbalanced, so the models mostly learn to predict the biggest class. Better results would need class balancing (for example class weights or resampling) and more informative features.
-
-<details>
-<summary>📊 View the confusion matrices</summary>
-
-<p align="center">
-  <img src="images/absentee_confusion_matrix.png" width="70%" alt="Confusion matrix: reason of absence"><br>
-  <img src="images/household_confusion_matrix_decision_tree.png" width="60%" alt="Confusion matrix: decision tree, house ownership">
-</p>
-
-</details>
 
 ---
 
@@ -303,7 +196,6 @@ flowchart LR
 ```
 .
 ├── Notebooks/                              # Jupyter notebooks, one per dataset
-├── images/                                 # Charts used in this README
 ├── Nepal_Census_2011_Project_Report.pdf    # Full project report
 ├── .gitignore
 └── README.md
@@ -317,7 +209,7 @@ The `data/` folder is not tracked by Git. See [Dataset](#-dataset).
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/sagunrai/Nepal_Census_2011_Analysis.git
+git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
 cd REPO_NAME
 
 # 2. Install dependencies
@@ -341,17 +233,8 @@ Run the notebooks one dataset at a time. If a notebook cannot find a file, check
 
 ---
 
-## 👥 Authors
+## 🗄️ Data source
 
-| Name | Role |
-|------|------|
-| **Sagun Rai** | Author |
-| **Aarav Subedi** | Author |
-| **Sunil Regmi** | Supervisor, Lecturer, Department of Artificial Intelligence |
-
-Kathmandu University, Department of Artificial Intelligence, Dhulikhel, Kavre.
-Submitted 2025-07-03.
-
-**Data source:** Central Bureau of Statistics, Government of Nepal. National Population and Housing Census 2011.
+Central Bureau of Statistics, Government of Nepal. *National Population and Housing Census 2011.*
 
 [⬆ Back to top](#nepal-census-2011-data-mining-project)
