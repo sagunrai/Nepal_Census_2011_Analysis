@@ -1,3 +1,5 @@
+<a id="top"></a>
+
 <div align="center">
 
 # Nepal Census 2011: Data Mining Project
@@ -8,36 +10,36 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?logo=jupyter&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-data%20analysis-150458?logo=pandas&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-classification-F7931E?logo=scikitlearn&logoColor=white)
-![Data](https://img.shields.io/badge/Data-CBS%20Nepal%20Census%202011-green)
 
 [📄 Read the full report (PDF)](Nepal_Census_2011_Project_Report.pdf) ·
-[📥 Download the data](DATA_LINK) ·
 [📓 Browse the notebooks](Notebooks/)
 
 </div>
 
 ---
 
-## 📑 Contents
+<a id="contents"></a>
 
-- [About](#-about)
-- [Key findings at a glance](#-key-findings-at-a-glance)
-- [Explore the results](#-explore-the-results) (click each section to expand)
-- [Model results](#-model-results)
-- [Dataset](#-dataset)
-- [Methodology](#-methodology)
-- [Project structure](#-project-structure)
-- [How to run](#-how-to-run)
-- [Limitations](#-limitations)
-- [Data source](#-data-source)
+## Contents
+
+- [About](#about)
+- [Key findings at a glance](#key-findings)
+- [Explore the results](#explore-results) (click each section to expand)
+- [Model results](#model-results)
+- [Methodology](#methodology)
+- [Project structure](#project-structure)
+- [How to run](#how-to-run)
+- [Limitations](#limitations)
 
 ---
 
-## 📌 About
+<a id="about"></a>
+
+## About
 
 This project analyses the **2011 Nepal Population and Housing Census**, published by the Central Bureau of Statistics (CBS) Nepal.
 
-The goal is to turn raw census files into insights that can support planning and policy, using exploratory data analysis (EDA), visualisation and simple classification models.
+The goal is to turn raw census records into insights that can support planning and policy, using exploratory data analysis (EDA), visualisation and simple classification models.
 
 **Questions the project answers**
 
@@ -48,9 +50,13 @@ The goal is to turn raw census files into insights that can support planning and
 | Predictive | Can we predict the reason for absence, or the type of house ownership? |
 | Comparative | How do urban and rural areas, or ecological belts, differ? |
 
+[⬆ Back to contents](#contents)
+
 ---
 
-## ⚡ Key findings at a glance
+<a id="key-findings"></a>
+
+## Key findings at a glance
 
 | Area | Finding |
 |------|---------|
@@ -63,14 +69,18 @@ The goal is to turn raw census files into insights that can support planning and
 | ⚰️ **Mortality** | Kathmandu records the most deaths. Elderly people (60+) account for the most deaths. Of deceased persons, about 56% are male and 43% female. |
 | 🏙️ **Urban vs rural** | Rural VDCs far outnumber urban municipalities, both nationally and in Kathmandu district. |
 
+[⬆ Back to contents](#contents)
+
 ---
 
-## 🔍 Explore the results
+<a id="explore-results"></a>
 
-> Click a section to expand it. Each section matches one dataset. All charts are in the [full report](Nepal_Census_2011_Project_Report.pdf).
+## Explore the results
+
+> Click a section to expand it. All charts are in the [full report](Nepal_Census_2011_Project_Report.pdf).
 
 <details>
-<summary><b>🗺️ 1. BatchId: administrative geography</b></summary>
+<summary><b>🗺️ 1. Administrative geography</b></summary>
 
 <br>
 
@@ -82,7 +92,7 @@ Maps every VDC/municipality to its district, development region, ecological belt
 </details>
 
 <details>
-<summary><b>🧳 2. Absentee: migration and absence</b></summary>
+<summary><b>🧳 2. Absentees: migration and absence</b></summary>
 
 <br>
 
@@ -96,7 +106,7 @@ Household members who were away from home at the time of the census, mostly abro
 </details>
 
 <details>
-<summary><b>🏠 3. Household: housing and land ownership</b></summary>
+<summary><b>🏠 3. Households: housing and land ownership</b></summary>
 
 <br>
 
@@ -111,7 +121,7 @@ Housing type, building materials, utilities, house ownership and female land own
 </details>
 
 <details>
-<summary><b>👤 4. Individual: education, religion, work and disability</b></summary>
+<summary><b>👤 4. Individuals: education, religion, work and disability</b></summary>
 
 <br>
 
@@ -126,7 +136,7 @@ Person-level records linked to households.
 </details>
 
 <details>
-<summary><b>⚰️ 5. Death: mortality patterns</b></summary>
+<summary><b>⚰️ 5. Deaths: mortality patterns</b></summary>
 
 <br>
 
@@ -139,11 +149,13 @@ Deaths recorded in the 12 months before the census.
 
 </details>
 
-[⬆ Back to top](#nepal-census-2011-data-mining-project)
+[⬆ Back to contents](#contents)
 
 ---
 
-## 🤖 Model results
+<a id="model-results"></a>
+
+## Model results
 
 Two classifiers were trained. Accuracy and recall below are calculated from the confusion matrices in the report.
 
@@ -154,30 +166,17 @@ Two classifiers were trained. Accuracy and recall below are calculated from the 
 
 **What this means:** both models beat the baseline only slightly. The data is heavily imbalanced, so the models mostly learn to predict the biggest class. Better results would need class balancing (for example class weights or resampling) and more informative features.
 
----
-
-## 📦 Dataset
-
-The data comes from the **CBS Nepal National Population and Housing Census 2011** (SPSS `.sav` format). It is too large for the repository, so it is published separately.
-
-**📥 [Download the data](DATA_LINK)**, then extract the files into a `data/` folder next to the notebooks.
-
-| File | Contents | Size |
-|------|----------|------|
-| `BatchId.sav` | District and VDC codes, development region, ecological belt, urban/rural | 0.25 MB |
-| `DEATH.SAV` | Deaths in the 12 months before the census | 0.27 MB |
-| `ABSENTEE.SAV` | Household members living away, with destination and reason | 4.7 MB |
-| `Household.SAV` | Housing, ownership, utilities, female land ownership | 37 MB |
-| `Individual01.SAV` | Person-level demographics, education, occupation | 102 MB |
-| `Individual02.SAV` | Person-level demographics, education, occupation | 233 MB |
+[⬆ Back to contents](#contents)
 
 ---
 
-## 🔬 Methodology
+<a id="methodology"></a>
+
+## Methodology
 
 ```mermaid
 flowchart LR
-    A[Raw census<br/>.sav files] --> B[Cleaning<br/>missing values, duplicates]
+    A[Raw census<br/>records] --> B[Cleaning<br/>missing values, duplicates]
     B --> C[Transformation<br/>encoding, grouping]
     C --> D[EDA<br/>statistics and distributions]
     D --> E[Visualisation<br/>matplotlib, seaborn]
@@ -189,52 +188,51 @@ flowchart LR
 - **EDA:** descriptive statistics, distributions, grouping and aggregation by district, region and ecological belt
 - **Modelling:** classification of reason of absence and of house ownership type
 
+[⬆ Back to contents](#contents)
+
 ---
 
-## 🗂️ Project structure
+<a id="project-structure"></a>
+
+## Project structure
 
 ```
 .
-├── Notebooks/                              # Jupyter notebooks, one per dataset
+├── Notebooks/                              # Jupyter notebooks, one per topic
 ├── Nepal_Census_2011_Project_Report.pdf    # Full project report
 ├── .gitignore
 └── README.md
 ```
 
-The `data/` folder is not tracked by Git. See [Dataset](#-dataset).
+[⬆ Back to contents](#contents)
 
 ---
 
-## 🚀 How to run
+<a id="how-to-run"></a>
+
+## How to run
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
-cd REPO_NAME
+git clone https://github.com/sagunrai/Nepal_Census_2011_Analysis.git
+cd Nepal_Census_2011_Analysis
 
 # 2. Install dependencies
 pip install pandas numpy matplotlib seaborn plotly scikit-learn pyreadstat jupyter
 
-# 3. Download the data and extract it into a data/ folder (see Dataset above)
-
-# 4. Start Jupyter and open a notebook
+# 3. Start Jupyter and open a notebook
 jupyter notebook
 ```
 
-Run the notebooks one dataset at a time. If a notebook cannot find a file, check the path it reads from and adjust it to match your `data/` folder.
+[⬆ Back to contents](#contents)
 
 ---
 
-## ⚠️ Limitations
+<a id="limitations"></a>
+
+## Limitations
 
 - Both classification models are dominated by the largest class, so their accuracy is only slightly above a naive baseline.
-- Some sample sizes in the charts are smaller than the full census totals. See the report for details on which records were used.
 - Results describe 2011 only. Nepal has changed administratively since then (VDCs were replaced by municipalities and rural municipalities), so district and VDC names may not match current boundaries.
 
----
-
-## 🗄️ Data source
-
-Central Bureau of Statistics, Government of Nepal. *National Population and Housing Census 2011.*
-
-[⬆ Back to top](#nepal-census-2011-data-mining-project)
+[⬆ Back to top](#top)
